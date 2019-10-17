@@ -72,6 +72,10 @@ module Kumogata2::CLI
         description: 'Show template information for a specified stack',
         arguments: [:path_or_url],
       },
+      dump_template: {
+        description: 'Dumps template file for a specified stack(useful for update stack via S3)',
+        arguments: [:path_or_url, :stack_name],
+      },
     }
 
     class << self

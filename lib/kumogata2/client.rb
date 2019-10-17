@@ -156,6 +156,13 @@ class Kumogata2::Client
     JSON.pretty_generate(summary).colorize_as(:json)
   end
 
+  def dump_template(path_or_url, stack_name)
+    stack_name = normalize_stack_name(stack_name)
+    validate_stack_name(stack_name)
+    template = open_template(path_or_url)
+    puts convert_output_value(template, false)
+  end
+
   private
 
   def get_client
