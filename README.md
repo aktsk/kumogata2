@@ -43,6 +43,7 @@ Commands:
   show-outputs     STACK_NAME                 Show outputs for a specified stack
   show-resources   STACK_NAME                 Show resources for a specified stack
   template-summary PATH_OR_URL                Show template information for a specified stack
+  dump_template    PATH_OR_URL STACK_NAME     Dump stack template to "#{stack_name}-stack-template.yml"
 
 Support Format:
   json, js, template
