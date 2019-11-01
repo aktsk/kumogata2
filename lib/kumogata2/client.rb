@@ -160,7 +160,10 @@ class Kumogata2::Client
     stack_name = normalize_stack_name(stack_name)
     validate_stack_name(stack_name)
     template = open_template(path_or_url)
-    puts convert_output_value(template, false)
+    File.open("#{stack_name}-stack-template.yml", "w") do |f|
+      f.puts(convert_output_value(template, false))
+    end
+    log(:info, "Write stack template complete", color: :cyan)
   end
 
   private
